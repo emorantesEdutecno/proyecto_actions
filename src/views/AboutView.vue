@@ -9,6 +9,7 @@
     <ProductList2></ProductList2>
     <hr>
     <ProductList></ProductList>
+    <ProductListAxios></ProductListAxios>
     <ProductTotal></ProductTotal>
     <ProductTotal2></ProductTotal2>
 
@@ -25,6 +26,7 @@ import ProductNew from '@/components/ProductNew.vue';
 import ProductTotal from '@/components/ProductTotal.vue';
 import ProductTotal2 from '@/components/ProductTotal2.vue';
 import ProductList2 from '@/components/ProductList2.vue';
+import ProductListAxios from '@/components/ProductListAxios.vue';
 import ProductEdit from '@/components/ProductEdit.vue';
 
 import {mapState} from 'vuex';
@@ -39,7 +41,8 @@ export default{
     ProductTotal,
     ProductTotal2,
     ProductList2,
-    ProductEdit
+    ProductEdit,
+    ProductListAxios,
   },
   data:function(){
     return{

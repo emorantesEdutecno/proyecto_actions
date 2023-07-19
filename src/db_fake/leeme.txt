@@ -1,0 +1,5 @@
+para usar db fake se necesita json-server
+npm install -g json-server
+
+para levantar el servidor, es necesario ubicars en la ruta de la carpeta db_fake e invocar a db.json
+C:\Users\didie\Downloads\Proyectos VueCli\proyecto_actions\src\db_fake> json-server --watch db.json

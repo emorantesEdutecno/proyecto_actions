@@ -1,4 +1,5 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import axios  from 'axios';
 
 export default createStore({
   state: {
@@ -30,6 +31,7 @@ export default createStore({
         price:500,
         subtotal:1000,
       }],
+      products_axios:[],
       id_product_edit:null,
   },
   getters: {
@@ -72,6 +74,9 @@ export default createStore({
         state.products.splice(index, 1, product);
         state.id_product_edit = null;
       },
+      SET_PRODUCTS_AXIOS:(state,products)=>{
+        state.products_axios = products;
+      },
 
   },
   actions: {
@@ -87,7 +92,18 @@ export default createStore({
     },
     editProduct:(context, product)=>{
       context.commit('EDIT_PRODUCT', product);
-    }
+    },
+    fetchProducts:({commit})=>{
+      let url = 'http://localhost:3000/products';
+      axios.get(url)
+            .then(resp=>{
+              console.log(resp);
+              commit('SET_PRODUCTS_AXIOS', resp.data);
+            })
+            .catch(err=>{
+              console.log(err);
+            });
+    },
   },
   modules: {
   }
